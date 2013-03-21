@@ -1,0 +1,76 @@
+8
+
+dir
+34
+svn+ssh://manager@seeveedee.com/home/manager/svn/player/trunk/ZVFlashPlayer_new
+svn+ssh://manager@seeveedee.com/home/manager/svn/player/trunk
+
+
+
+2009-07-26T07:43:09.476738Z
+34
+manager
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+6b4cf811-8c92-44fb-99e7-33437864046d
+
+deprecated
+dir
+
+.project
+file
+
+
+
+
+2009-07-10T10:11:01.343750Z
+510de765b3dba4f82ad31b5e76db719f
+2009-07-10T10:14:33.005334Z
+22
+manager
+
+config
+dir
+
+src
+dir
+
+.flexProperties
+file
+
+
+
+
+2009-07-23T07:38:35.078125Z
+4dea7b82a88079a0a49a3936da7a8632
+2009-07-10T10:14:33.005334Z
+22
+manager
+
+libs
+dir
+
+.actionScriptProperties
+file
+
+
+
+
+2009-07-23T07:38:35.046875Z
+2e3b2c6b5e98fa914928150e3f88c0a0
+2009-07-23T10:54:04.121887Z
+31
+manager
+

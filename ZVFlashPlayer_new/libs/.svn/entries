@@ -1,0 +1,16 @@
+8
+
+dir
+34
+svn+ssh://manager@seeveedee.com/home/manager/svn/player/trunk/ZVFlashPlayer_new/libs
+svn+ssh://manager@seeveedee.com/home/manager/svn/player/trunk
+
+
+
+2009-07-23T10:54:04.121887Z
+31
+manager
+
+
+svn:special svn:externals svn:needs-lock
+

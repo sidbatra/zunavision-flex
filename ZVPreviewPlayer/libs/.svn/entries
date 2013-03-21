@@ -1,0 +1,16 @@
+8
+
+dir
+44
+svn+ssh://manager@seeveedee.com/home/manager/svn/player/trunk/ZVPreviewPlayer/libs
+svn+ssh://manager@seeveedee.com/home/manager/svn/player/trunk
+
+
+
+2009-09-03T06:22:16.114243Z
+44
+manager
+
+
+svn:special svn:externals svn:needs-lock
+

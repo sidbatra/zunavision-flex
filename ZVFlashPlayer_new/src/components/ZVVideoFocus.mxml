@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<components:ZVVideoFocus_as xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:components="components.*" xmlns:skins="skins.*"
+	creationCompleteEffect="{fadeIn}" removedEffect="{fadeOut}"
+	creationComplete="initComponent()" 
+	mouseDown="onMouseDown(event)" mouseUp="onMouseUp(event)" mouseMove="onMouseMove(event)" click="onMouseClick(event)"
+	rollOver="onRollOver(event)" rollOut="onRollOut(event)" keyUp="onKeyUp(event)"
+	>
+			
+	<mx:Fade id="fadeIn"
+		alphaFrom="0.0" alphaTo="1.0" duration="400" 
+		/>
+	
+	<mx:Fade id="fadeOut"
+		alphaFrom="1.0" alphaTo="0.0" duration="400" 
+		/>
+		
+	<mx:TextArea id="launchFocusTextArea" 
+		x="62" width="460" height="74" 
+		editable="false" 
+		borderColor="#FFFFFF" color="#FFFFFF"
+		styleName="videoFocusTextArea" 
+		text="(Optionally) Click here to focus your droplet on something you see" 
+		backgroundAlpha="0.0" 
+		useHandCursor="true" buttonMode="true" mouseChildren="false"
+		textAlign="center" paddingTop="25"
+		/>
+	
+	<mx:TextArea id="cancelTextArea" 
+		x="310" y="0" width="80" height="30" paddingTop="4"
+		editable="false" 
+		text="Cancel"
+		textAlign="center"
+		borderColor="#FFFFFF" color="#FFFFFF"
+		backgroundAlpha="0.0"
+		styleName="videoFocusTextArea"
+		useHandCursor="true" buttonMode="true" mouseChildren="false"
+		visible="false"
+		click="onCancelClick(event)" rollOver="onCancelRollOver(event)" rollOut="onCancelRollOut(event)"
+		/>
+		
+	<mx:Button id="leftTopButton"
+		styleName="resizeButton"
+		rollOver="onLeftTopRollOver(event)"
+		rollOut="onResizeButtonRollOut(event)"
+		visible="false"
+		height="13" width="13"
+		/>
+		
+	<mx:Button id="leftBottomButton"
+		styleName="resizeButton"
+		rollOver="onLeftBottomRollOver(event)"
+		rollOut="onResizeButtonRollOut(event)"
+		visible="false"
+		height="13" width="13"
+		/>
+		
+	<mx:Button id="rightTopButton"
+		styleName="resizeButton"
+		rollOver="onLeftBottomRollOver(event)"
+		rollOut="onResizeButtonRollOut(event)"
+		visible="false"
+		height="13" width="13"
+		/>
+		
+	<mx:Button id="rightBottomButton"
+		styleName="resizeButton"
+		rollOver="onLeftTopRollOver(event)"
+		rollOut="onResizeButtonRollOut(event)"
+		visible="false"
+		height="13" width="13"
+		/>
+	
+	
+	
+	
+</components:ZVVideoFocus_as>

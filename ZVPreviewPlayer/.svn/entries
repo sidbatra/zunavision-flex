@@ -1,0 +1,58 @@
+8
+
+dir
+44
+svn+ssh://manager@seeveedee.com/home/manager/svn/player/trunk/ZVPreviewPlayer
+svn+ssh://manager@seeveedee.com/home/manager/svn/player/trunk
+
+
+
+2009-09-03T06:22:16.114243Z
+44
+manager
+
+
+svn:special svn:externals svn:needs-lock
+
+.project
+file
+
+
+
+
+2009-08-20T00:18:33.421875Z
+42c72fc9535ef8416c465d8a0a28f990
+2009-09-03T06:22:16.114243Z
+44
+manager
+
+src
+dir
+
+.flexProperties
+file
+
+
+
+
+2009-08-20T00:46:41.453125Z
+4dea7b82a88079a0a49a3936da7a8632
+2009-09-03T06:22:16.114243Z
+44
+manager
+
+libs
+dir
+
+.actionScriptProperties
+file
+
+
+
+
+2009-08-20T00:46:41.359375Z
+fa07b733209f94ba06828a8e39873ffa
+2009-09-03T06:22:16.114243Z
+44
+manager
+

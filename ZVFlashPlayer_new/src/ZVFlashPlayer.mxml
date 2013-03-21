@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<custom:ZVFlashPlayer_as 
+	xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:custom="*" xmlns:components="components.*" xmlns:skins="skins.*" 
+	creationComplete="initApplication()"
+	width="640" height="384" 
+	layout="absolute"
+	styleName="zvFlashPlayer" backgroundGradientAlphas="[1.0, 1.0]" backgroundGradientColors="[#000000, #000000]">
+	
+	<mx:Style source="stylesheets/main.css" />
+	
+	<mx:Fade id="fadeIn"
+		alphaFrom="0.0" alphaTo="1.0" duration="500" />
+	
+	<mx:Fade id="fadeOut"
+		alphaFrom="1.0" alphaTo="0.0" duration="500" />
+	
+	<components:ZVVideoPlayer id="videoPlayer" 
+		width="640" height="360" 
+		/>
+	
+	<mx:Button id="hideButton" 
+		y="4" width="11" height="11" right="6" 
+		skin="@Embed(source='images/delete.png')"
+		useHandCursor="true" buttonMode="true"
+		click="HouseKeeping.hideFlashPlayer()"
+		visible="false"
+		 />
+		
+	<components:ZVVideoBar id="videoBar" 
+		x="0" y="360" 
+		/>
+	
+	<mx:Canvas id="focusContainer" 
+		x="0" y="0"
+		/>
+	
+	<mx:Canvas id="convoContainer" 
+		x="0" y="0"
+		/>
+		
+	<mx:TextArea id="globalMessageTextArea"
+		styleName="globalMessage"
+		left="80" y="5" width="480" height="25"
+		text=""
+		backgroundColor="0x1C3F88" cornerRadius="4" borderStyle="solid" borderColor="#1C3F88"
+		visible="false"
+		showEffect="{fadeIn}" hideEffect="{fadeOut}"
+		/>
+		
+	<components:ZVToolTip id="globalToolTip" 
+		x="443" y="328" width="190"
+		visible="false"
+		hideEffect="{fadeOut}"		
+		/>
+	
+</custom:ZVFlashPlayer_as>
+

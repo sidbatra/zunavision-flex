@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<components:ZVAnnotation_as xmlns:mx="http://www.adobe.com/2006/mxml"  xmlns:local="*" 
+	xmlns:custom="*"  xmlns:components="components.*"  xmlns:containers="containers.*"
+	width="290" height="110" layout="absolute"	fontFamily="Arial"	cornerRadius="20"  headerHeight="0" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0" borderThickness="0" borderThicknessBottom="0" borderThicknessLeft="0" borderThicknessRight="0" borderThicknessTop="0" backgroundAlpha="0" borderStyle="none"
+	creationComplete="initializeAnnotation()">
+	<mx:Button x="0" y="0" width="100%" height="100%" fillAlphas="[1.0, 1.0, 1.0, 1.0]" cornerRadius="20" id="mainButton" useHandCursor="true"/>
+	<mx:Text text="www.link.com" width="202" color="#18720E" id="urlLabel" x="25" y="66" textAlign="left" fontSize="12"/>
+	<mx:Text text="Title" width="255" height="28.15" textAlign="left" fontSize="14" color="#1700C0" textDecoration="underline" id="titleLabel" x="25" y="10" fontWeight="bold"/>	
+	<mx:Text x="25" y="34.15" text="Text" width="255" height="38" fontSize="12" color="#000000" id="textLabel" textDecoration="normal"/>
+	
+	<mx:ControlBar height="0" visible="false" />
+		
+	<!--components:states>
+	
+	<*********** FULL MODE *************** >
+	
+		<mx:Stete>
+			
+		</mx:Stete>
+       
+            			            
+        </mx:State>
+        <*********** END OF FULL MODE *************** >
+       
+       <*********** SMALL MODE ***************>   
+      <mx:State name="smallMode" id="smallMode">
+                
+        </mx:State>           
+      <*********** END OF SMALL MODE ***************>
+      
+    </components:states-->	
+	
+</components:ZVAnnotation_as>

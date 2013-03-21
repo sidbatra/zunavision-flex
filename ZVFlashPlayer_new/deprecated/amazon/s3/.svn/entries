@@ -1,0 +1,40 @@
+8
+
+dir
+34
+svn+ssh://manager@seeveedee.com/home/manager/svn/player/trunk/ZVFlashPlayer_new/deprecated/amazon/s3
+svn+ssh://manager@seeveedee.com/home/manager/svn/player/trunk
+
+
+
+2009-07-26T07:43:09.476738Z
+34
+manager
+
+
+svn:special svn:externals svn:needs-lock
+
+PolicyGenerator.as
+file
+
+
+
+
+2009-07-14T00:43:24.331680Z
+ef2f50fd331f519acdd85cd6e0132608
+2009-07-26T07:43:09.476738Z
+34
+manager
+
+UploadPostHelper.as
+file
+
+
+
+
+2009-07-14T00:42:16.878555Z
+019ffc9eddca4870db301883c4d7be36
+2009-07-26T07:43:09.476738Z
+34
+manager
+

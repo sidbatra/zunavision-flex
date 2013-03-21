@@ -1,0 +1,77 @@
+/* CSS file */
+@font-face {
+			src: local("Arial");
+			fontFamily: "Arial";
+			unicodeRange:'U+0020-U+007E'; 
+		}
+		
+		@font-face {
+			src: local("Arial");
+			fontFamily: "Arial";
+			fontWeight: bold;
+			unicodeRange:'U+0020-U+007E'; 
+		}
+
+		global {
+		   color: #FFFFFF;
+		   fontFamily: "Arial";
+		   fontSize: 10px;
+		   fontWeight: normal;
+		   background-color: #3558a1;
+		}
+		
+		.title {
+			fontSize: 20px;
+			fontWeight: normal;
+		}
+		
+		.timeCode {
+			fontSize: 10px;
+			color: #999999;
+		}
+		
+		.label {
+			fontSize: 10px;
+			color: #aaaaaa;
+			background-color: #3558a1;
+		}
+		
+		Button {
+			themeColor: "haloSilver";
+		}
+		
+		ProgressBar {
+			barColor: #777777;
+			borderColor: #777777;
+			color: #111111;
+		}
+		
+		HSlider {
+			themeColor: "haloSilver";
+            dataTipStyleName: "dataTip";
+            dataTipOffset: 6;            
+        }
+
+        .dataTip {
+            backgroundColor: #3558A1;
+        }
+        
+        DataGrid {
+        	background-color: #3558A1;
+        	/*color: #333333;
+        	//themeColor: "haloSilver";*/
+        }
+        
+        .cuePointContainerStyle {
+			paddingBottom: 5;
+			paddingLeft: 5;
+			paddingRight: 5;
+			paddingTop: 5;
+			alpha: 0;
+			background-color: #3558A1;
+			background-alpha: 0.5;
+        }
+        
+        .cuePointText {
+        	fontSize: 14px;
+        }

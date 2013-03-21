@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<components:ZVConversation_as 
+	xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:components="components.*" 
+	height="38" width="545" 
+	x="12" y="316"
+	styleName="zvConversation"
+	horizontalScrollPolicy="off" verticalScrollPolicy="off"
+	visible="false" currentState="partial"
+	creationCompleteEffect="{fadeIn}" hideEffect="{fadeOut}" showEffect="{fadeIn}" 
+	resizeEffect="{resizeEffect}" moveEffect="{moveEffect}" removedEffect="{fadeOut}"
+	creationComplete="initComponent()" rollOver="onRollOver(event)" rollOut="onRollOut(event)"
+	>
+	<components:states>
+		<mx:State name="partial"/>
+		<mx:State name="full">
+			<mx:SetProperty name="width" value="550"/>
+			<mx:SetStyle target="{expandContractButton}" name="skin" value="@Embed(source='../images/expandDown.png')"/>
+		</mx:State>
+	</components:states>
+			
+	<mx:Fade id="fadeIn"
+		alphaFrom="0.0" alphaTo="1.0" duration="400" />
+	
+	<mx:Fade id="fadeOut"
+		alphaFrom="1.0" alphaTo="0.0" duration="400" />
+	
+	<mx:Resize id="resizeEffect" />
+	<mx:Move id="moveEffect" />
+	
+	<mx:Canvas id="commentsCanvas"
+		x="0" y="0" width="530" height="100%"
+		horizontalScrollPolicy="off" verticalScrollPolicy="off"
+		/>
+		
+	<mx:Button id="expandContractButton"
+		width="11" height="11" right="3" bottom="3"
+		skin="@Embed(source='../images/expandUp.png')"
+		useHandCursor="true" buttonMode="true" 
+		visible="false"
+		toolTip=" "
+		click="onExpandContractClick(event)" toolTipCreate="HouseKeeping.onToolTipCreate('View / Hide reply dropletz',150,event)" 
+		toolTipShow="HouseKeeping.onToolTipShow(event,10)"
+		/>
+	<mx:Label id="totalCommentsLabel"
+		width="20" right="14" bottom="-2"
+		visible="false"
+		text=""
+		color="#FFFFFF" fontFamily="Arial" textAlign="right"
+		 />	
+	
+	
+</components:ZVConversation_as>

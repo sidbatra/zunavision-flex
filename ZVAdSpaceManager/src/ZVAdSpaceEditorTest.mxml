@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<components:ZVAdSpaceEditorTest_as xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute"
+	applicationComplete="initializeApplication()" xmlns:components="components.*">
+
+	<components:ZVAdSpaceEditor id="_zvAdSpaceEditor" x="0" y="0" />	
+	
+</components:ZVAdSpaceEditorTest_as>

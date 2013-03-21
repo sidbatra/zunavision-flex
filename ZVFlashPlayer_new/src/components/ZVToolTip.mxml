@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<components:ZVToolTip_as xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:components="components.*"   
+    implements="mx.core.IToolTip"
+    useHandCursor="true" buttonMode="true" mouseChildren="false" 
+    height="24">
+    
+    <mx:TextArea id="toolTipTextArea" 
+    	width="100%" height="20" y="2"
+    	styleName="zvToolTip"
+    	wordWrap="true" editable="false"
+    	/>
+
+</components:ZVToolTip_as>
+

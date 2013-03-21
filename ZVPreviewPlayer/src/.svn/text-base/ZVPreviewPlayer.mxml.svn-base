@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<custom:ZVPreviewPlayer_as xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:custom="*" 
+	layout="absolute" width="150" height="84" 
+	backgroundGradientColors="[#393939, #393939]"
+	alpha="0.0"
+	mouseChildren="false" useHandCursor="true" buttonMode="true"
+	creationComplete="initApplication()"
+	click="onClick(event)" rollOut="onRollOut(event)" rollOver="onRollOver(event)"
+	>
+	
+	<mx:VideoDisplay id="videoPlayer"
+		 x="0" y="0" width="100%" height="100%"
+		 backgroundColor="#393939"
+		 backgroundAlpha="0.0"
+		 mouseChildren="false" useHandCursor="true" buttonMode="true"
+		 click="onClick(event)"
+	/>
+	<mx:Button x="0" y="0" width="10" height="12" id="playPauseButton" skin="@Embed(source='images/pauseButtonSkin.png')"/>
+	
+	<!--mx:Label id="testLabel" x="20" y="25" text="Label" width="75" height="32" color="#FFFFFF" visible="true"/-->
+	
+</custom:ZVPreviewPlayer_as>

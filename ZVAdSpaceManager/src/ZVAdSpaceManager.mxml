@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<components:ZVAdSpaceManager_as xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:local="*" 
+	 xmlns:components="components.*" xmlns:eventhandlers="eventhandlers.*" layout="absolute" applicationComplete="init()" horizontalAlign="center" 
+	 	 backgroundColor="0x3558a1" backgroundGradientColors="0" verticalScrollPolicy="off"
+	 	 width="750" paddingLeft="0" paddingTop="0" paddingRight="0" paddingBottom="0" height="1399" >
+
+
+<mx:Style source="stylesheets/zvstylesheet.css" />
+	
+<mx:ArrayCollection id="thumbnailFeed" />
+<mx:ArrayCollection id="outputFeed" />
+
+
+<mx:VBox id="uploadContainer" width="750" height="1400" horizontalAlign="center" >
+	
+	<mx:HBox id="mainUploadBox" horizontalAlign="center" verticalAlign="top" height="100" width="750" >
+		<mx:VBox width="750" height="100" verticalAlign="middle" horizontalAlign="center" 
+			borderColor="0xCCD5E7" borderThickness="1" borderStyle="solid" cornerRadius="0" 
+			paddingTop="0" paddingBottom="0">
+			
+			<mx:Spacer height="25" />	
+			<mx:Button skin="@Embed(source='images/upload_videos.png')" id="browseButton" width="165" height="34" 
+				color="0xffffff" fontSize="14" useHandCursor="true" buttonMode="true"
+				borderColor="0xCCD5E7" />
+	
+			<mx:Text id="uploadText" color="0xCCD5E7" height="25"
+			text="To select and upload several videos, hold down Ctrl key (Windows) or Command key (Mac)." />
+		</mx:VBox>
+	</mx:HBox>
+
+		
+	<mx:VBox width="750" horizontalAlign="center" id="fileContainer" visible="false"
+			borderColor="0xffffff"  borderThickness="1" borderStyle="solid" cornerRadius="0" >
+		<mx:Spacer id="fileUploadSpacer" height="0" visible="false" />
+		<mx:VBox id="fileUploadBox" width="100%" label="Files to Upload" />
+		<mx:Text id="progressText" text="Once processed, your videos will appear in the gallery below." 
+			color="0xCCD5E7" height="25" />
+
+	</mx:VBox>
+
+<components:ZVTileList id="thumbnailList" width="750" dataProvider="{thumbnailFeed}" />
+	
+<mx:Spacer height="25"  />
+
+<components:ZVTileList  id="outputList" width="750" dataProvider="{outputFeed}" />
+	
+	<mx:HBox>
+		<mx:Text id="debugText" text="Debugging information" visible="false"  />
+	</mx:HBox>
+	
+	
+</mx:VBox>
+
+<mx:VBox id="zvASEBox" visible="false" width="750" height="1400">
+	<components:ZVAdSpaceEditor id="_zvAdSpaceEditor" alpha="1.0" x="0" y="0" height="1400"  width="750"/>	
+</mx:VBox>	
+		
+
+</components:ZVAdSpaceManager_as>

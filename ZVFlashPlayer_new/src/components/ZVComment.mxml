@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<components:ZVComment_as xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:components="components.*" 
+	width="530" height="38"
+	horizontalScrollPolicy="off" verticalScrollPolicy="off"
+	creationComplete="initComponent()"
+	resizeEffect="{resizeEffect}"
+	styleName="zvComment"
+	currentState="display">
+	
+	<mx:Resize id="resizeEffect" />
+	
+	<mx:Fade id="fadeOut"
+		alphaFrom="1.0" alphaTo="0.0" duration="400" />
+	
+	<components:states>
+		<mx:State name="display">
+			<mx:SetProperty target="{charLeftLabel}" name="visible" value="false"/>
+			<mx:SetProperty target="{inputTextArea}" name="visible" value="false"/>
+		</mx:State>
+		<mx:State name="input">
+			<mx:SetProperty target="{displayTextArea}" name="visible" value="false"/>
+			<mx:SetProperty target="{replyDoneButton}" name="label" value="Done"/>
+			<mx:SetProperty target="{fbShareButton}" name="visible" value="false"/>
+			<mx:SetProperty target="{twitterShareButton}" name="visible" value="false"/>
+			<mx:SetProperty target="{shareButton}" name="visible" value="false"/>
+		</mx:State>		
+	</components:states>
+	
+	<components:transitions>
+		<mx:Transition fromState="input" toState="display">
+			<mx:Sequence>
+				<mx:Fade alphaFrom="1.0" alphaTo="0.0" duration="500" target="{inputTextArea}"/>
+				<mx:SetPropertyAction target="{inputTextArea}" name="visible"/>
+				<mx:SetPropertyAction target="{displayTextArea}" name="visible"/>
+			</mx:Sequence>
+		</mx:Transition>
+	</components:transitions>
+
+	<mx:Image id="userImage" 
+		x="4" y="3"
+		width="32" height="32"
+		maintainAspectRatio="true" scaleContent="true"
+		verticalAlign="middle" horizontalAlign="center"
+		useHandCursor="true" buttonMode="true"
+		click="onUserImageClicked(event)"
+		/>
+		
+	<mx:TextArea id="displayTextArea"
+		x="39" y="0"
+		width="420" height="38"  
+		wordWrap="true" editable="false"  
+		styleName="displayTextArea"
+		color="#ffffff"
+		/>
+		
+	<mx:TextArea id="inputTextArea"
+		x="39" y="1"
+		width="420" height="36"  
+		wordWrap="true" editable="true" maxChars="140"
+		styleName="inputTextArea"
+		keyUp="onInputTextKeyUp(event)"
+		 fontSize="12" backgroundAlpha="0.9">
+	</mx:TextArea>
+		
+	<mx:Button id="deleteButton" 
+		y="4" width="11" height="11" right="6" 
+		skin="@Embed(source='../images/delete.png')"
+		useHandCursor="true" buttonMode="true"
+		click="onDeleteClick(event)"
+		visible="true"
+		 />
+		
+	<mx:Button  id="replyDoneButton"
+		width="40" height="16" y="3" right="25"
+		buttonMode="true" useHandCursor="true"
+		styleName="button"
+		skin="@Embed(source='../images/buttonSkin.png')"
+		label="Reply"
+		click="onReplyDoneClick(event)" 
+		/>
+		
+	<mx:Button  id="shareButton"
+		width="40" height="16" y="20" right="25"
+		buttonMode="true" useHandCursor="true"
+		styleName="button"
+		skin="@Embed(source='../images/buttonSkin.png')"
+		label="Share"
+		click="onShareClick(event)" 
+		/>
+	
+	<!--mx:Button  id="splashButton"
+		width="42" height="16" y="20" right="24"
+		buttonMode="true" useHandCursor="true"
+		styleName="button"
+		skin="@Embed(source='../images/buttonSkin.png')"
+		label="Share"
+		hideEffect="{fadeOut}"
+		toolTip=" "
+		click="onSplashClick(event)" toolTipCreate="HouseKeeping.onToolTipCreate('Splash this droplet and share it with your friends',265,event)" 
+		toolTipShow="HouseKeeping.onToolTipShow(event,10)"
+		/-->	
+		 
+		
+	<mx:Label id="charLeftLabel"
+		y="19" height="18" width="26" right="30"
+		text="{140 - inputTextArea.text.length}" 
+		styleName="charsLeftLabel"
+		textAlign="center"
+		/>
+	
+	<mx:Button id="fbShareButton"
+		y="21" width="15" height="15" right="47"
+		skin="@Embed(source='../images/facebook-logo.gif')"
+		buttonMode="true" useHandCursor="true" mouseChildren="false"
+		click="onFacebookShare(event)"
+		 visible="false"/>
+		
+	<mx:Button id="twitterShareButton" 
+		y="21" width="14" height="15" right="28"
+		skin="@Embed(source='../images/twitter-logo.gif')" 
+		buttonMode="true" useHandCursor="true" mouseChildren="false"
+		click="onTwitterShare(event)"
+		 visible="false"/>
+		
+</components:ZVComment_as>

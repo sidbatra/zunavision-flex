@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<components:ZVAdSpaceEditor_as xmlns:mx="http://www.adobe.com/2006/mxml"  xmlns:local="*" 
+	xmlns:custom="*"  xmlns:components="components.*"  xmlns:containers="containers.*"    backgroundColor="0x3558a1"
+	width="750" height="800" paddingTop="0" paddingLeft="0" paddingBottom="0" paddingRight="0" currentState="viewMode">
+
+<mx:Script><![CDATA[ import eventhandlers.VideoSetupEventHandler; ]]></mx:Script>
+	
+<mx:ArrayCollection id="_creativesFeed" />
+<containers:AdSpaceHandler id="_adSpaceHandler" />	
+			
+			<mx:Panel id="editorPanel" width="750" height="800" layout="absolute" paddingBottom="0" 
+				paddingLeft="0" paddingRight="0" paddingTop="0" borderColor="#FCF2F2" borderStyle="none" 
+				fontFamily="Arial" x="0" y="0" cornerRadius="0" borderThickness="0" verticalAlign="top" 
+				backgroundAlpha="0" headerHeight="0" borderThicknessLeft="0" borderThicknessBottom="0" borderThicknessRight="0" borderThicknessTop="0">
+									
+						<mx:Button id="videoPlayButton" enabled="false" useHandCursor="true" buttonMode="true"  
+							width="17" height="20" borderColor="#3558A1" x="15" y="354.55" 
+							fillAlphas="[0.0, 0.0, 0.0, 0.0]" alpha="1.0" cornerRadius="0">
+											</mx:Button>
+						<mx:VBox id="videoBox" paddingLeft="0" paddingRight="0" paddingBottom="0" 
+							paddingTop="0" backgroundColor="#01040A" width="525" height="295" 
+							verticalScrollPolicy="off" horizontalScrollPolicy="off" 
+							horizontalAlign="center" verticalGap="0" x="3" y="50">
+		
+							<mx:UIComponent id="videoUIC" />
+		
+						</mx:VBox>
+						
+						<mx:ProgressBar id="bufferProgressBar" width="404" labelPlacement="center" 
+									mode="manual" minimum="0" indeterminate="false" visible="true" 
+									themeColor="#4362BC" color="#3C199F" height="9.3" alpha="1.0" 
+									fontSize="8" label="  " x="47" y="360" borderColor="#3558A1"/>
+						<mx:HSlider id="videoProgressSlider" width="415" allowTrackClick="true" enabled="false" 
+							showDataTip="false"  themeColor="#3558A1" borderColor="#3558A1" 
+							fillAlphas="[1.0, 1.0]" fillColors="[#FBF3F3, #FCF7F7, #F7F4F4, #F0E3E3]" 
+							alpha="0.99" visible="true" liveDragging="false" x="42" y="350.5" height="20" 
+							thumbSkin="@Embed(source='images/squareThumb4.gif')" useHandCursor="true" 
+							thumbOffset="-1" values="10" allowThumbOverlap="false">
+						<mx:trackSkin>@Embed(source='images/trackSkinSolid9.png')</mx:trackSkin>
+						</mx:HSlider>
+									
+
+					<mx:Text id="videoTimerText" text="00:00" width="32.2" height="21.033333" 
+						color="#FFFFFF" visible="true" x="488.8" y="356.45" textAlign="right"/>
+					<mx:Label id="videoNameLabel" x="3" y="17"  text="Video Name" width="525" height="25" fontFamily="Arial" 
+						color="#FFFFFF" fontWeight="bold" fontSize="17" />
+													
+			
+								
+					<mx:Button x="462" y="357.45" width="15" height="13" 
+					id="fullScreenButton" skin="@Embed(source='images/fullScreen.gif')" useHandCursor="true"/>
+		
+					<mx:Button id="closeZVEditorButton" x="673" y="19" useHandCursor="true" click="VideoSetupEventHandler.adSpaceEditingCancelled()"
+					skin="@Embed(source='images/cancelButton.gif')" width="77" height="26"/>
+				
+
+		</mx:Panel>
+
+	<components:states>
+	
+	<!-- *********** EDIT MODE *************** -->
+	
+        <mx:State name="editMode" id="editMode" >
+          <mx:AddChild relativeTo="{editorPanel}">
+        	<mx:DataGrid id="adSpaceDataGrid" dataProvider="{_adSpaceHandler._adSpaceBindableData}" 
+				height="330.60605" width="217" x="533" y="50" borderColor="#ABABAB" 
+				alternatingItemColors="[#595959, #595959]" headerColors="[#4f4f4f , #4f4f4f]" 
+				color="#FFFFFF" fontWeight="bold" alpha="1.0" borderStyle="solid" 
+				horizontalGridLines="false" verticalGridLines="false" selectionColor="#3558a1" 
+				textSelectedColor="#FFFFFF" rollOverColor="#9AACD0" editable="true">
+				<mx:columns>
+					<mx:DataGridColumn headerText="#" dataField="_index" textAlign="left" sortable="true" width="25" editable="false"/>						
+					<mx:DataGridColumn headerText="time" dataField="_displayTime" textAlign="left" sortable="true" editable="false" 
+						width="40"/>
+					<mx:DataGridColumn headerText="Creative" dataField="_creativeName" textAlign="left" sortable="true" editable="false"  />
+				</mx:columns>
+			</mx:DataGrid>
+        </mx:AddChild>
+        
+        	<mx:AddChild relativeTo="{editorPanel}">
+        		        		
+ 			
+					
+				<components:ZVTileList  id="creativesTileList" dataProvider="{_creativesFeed}" 
+						x="0" y="388.2" useRollOver="false" width="750" />
+	
+					
+        </mx:AddChild>
+        
+        <mx:AddChild relativeTo="{editorPanel}" >        									
+					<mx:Button id="doneEditingButton" enabled="true" useHandCursor="true" buttonMode="true"  
+						borderColor="#3558A1" x="533" y="19" click="VideoSetupEventHandler.adSpaceDataSaved(event)"
+						skin="@Embed(source='images/doneButton.gif')" width="135" height="26"/>
+        </mx:AddChild>
+        <mx:SetProperty target="{editorPanel}" name="height" value="600"/>
+        <mx:SetProperty name="height" value="600"/>
+            			            
+        </mx:State>
+        <!-- *********** END OF EDIT MODE *************** -->
+       
+       <!-- *********** VIEW MODE *************** -->   
+      <mx:State name="viewMode" id="viewMode">
+          <mx:AddChild relativeTo="{editorPanel}">
+        	
+        </mx:AddChild>
+          <mx:SetProperty target="{closeZVEditorButton}" name="x" value="450.95"/>
+          <mx:SetProperty target="{closeZVEditorButton}" name="y" value="18.4"/>
+          <mx:SetProperty target="{editorPanel}" name="width" value="879"/>
+          <mx:SetProperty target="{editorPanel}" name="height" value="604"/>
+          <mx:SetProperty name="width" value="879"/>
+          <mx:SetProperty name="height" value="616"/>
+          <mx:AddChild relativeTo="{editorPanel}" position="lastChild">
+              <mx:Button x="311.95" y="18.45" id="downloadVideoButton" width="135" height="26" skin="@Embed(source='images/downloadButton.gif')" visible="false"/>
+          </mx:AddChild>
+          <mx:SetProperty target="{videoProgressSlider}" name="y" value="538.05"/>
+          <mx:SetProperty target="{bufferProgressBar}" name="y" value="547.55"/>
+          <mx:SetProperty target="{videoTimerText}" name="y" value="544"/>
+          <mx:SetProperty target="{fullScreenButton}" name="y" value="545"/>
+          <mx:SetProperty target="{videoPlayButton}" name="y" value="542.1"/>
+          <mx:SetProperty target="{videoBox}" name="width" value="524.92426"/>
+          <mx:SetProperty target="{videoBox}" name="height" value="284.54547"/>
+          <mx:SetProperty target="{videoTimerText}" name="x" value="525.75"/>
+          <mx:SetProperty target="{videoProgressSlider}" name="x" value="78.95"/>
+          <mx:SetProperty target="{bufferProgressBar}" name="x" value="83.95"/>
+          <mx:SetProperty target="{fullScreenButton}" name="x" value="498.95"/>
+          <mx:SetProperty target="{videoPlayButton}" name="x" value="51.95"/>
+          <mx:AddChild relativeTo="{editorPanel}" position="lastChild">
+              <mx:Button x="78" y="437" label="Save" width="74.01515" height="28.10606" id="saveXMLButton"/>
+          </mx:AddChild>
+          <mx:AddChild relativeTo="{editorPanel}" position="lastChild">
+              <mx:Button x="581.4" y="437.95" label="Search" width="92.34848" height="26.060606" id="checkAdWords"/>
+          </mx:AddChild>
+          <mx:AddChild relativeTo="{editorPanel}" position="lastChild">
+              <mx:TextArea x="338.05" y="437.95" width="219.92424" height="44.015152" id="queryText"/>
+          </mx:AddChild>
+            			            
+        </mx:State>           
+      <!-- *********** END OF VIEW MODE *************** -->
+      
+    </components:states>	
+	
+
+	<mx:Fade id="fadeIn" alphaFrom="0.0" alphaTo="1.0" />
+	<mx:Fade id="fadeOut" alphaFrom="1.0" alphaTo="0.0" />
+	
+</components:ZVAdSpaceEditor_as>

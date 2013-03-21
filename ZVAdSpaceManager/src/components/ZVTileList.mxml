@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TileList xmlns:mx="http://www.adobe.com/2006/mxml"  xmlns:local="*" 
+	xmlns:custom="*"  xmlns:components="components.*"  xmlns:containers="containers.*" 
+	 visible="false" useRollOver="false"  
+		labelField="thumbnail"
+		 verticalScrollPolicy="off"
+		width="750" height="{Constants.TILE_MARGIN + Constants.THUMBNAIL_HEIGHT}"  selectionColor="0x595959"
+		paddingTop="{Constants.TILE_MARGIN}" paddingLeft="{Constants.TILE_MARGIN}" backgroundColor="0x595959"
+		borderColor="#ABABAB" borderThickness="1" borderStyle="solid" cornerRadius="0">
+		<mx:itemRenderer>
+			<mx:Component>
+                <mx:HBox paddingTop="0" width="100%" >
+                
+                <mx:Script><![CDATA[ import eventhandlers.VideoSetupEventHandler; ]]></mx:Script>
+                
+                <mx:VBox id="outputThumbnailContainer" width="154" height="{Constants.THUMBNAIL_HEIGHT}" 
+                    paddingRight="2" paddingLeft="2" paddingTop="2" backgroundColor="0x393939"
+                    horizontalAlign="left" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+                    
+                    <mx:Image id="videoThumbnail" click="VideoSetupEventHandler.thumbnailSelected(event,data);" 
+                        height="112" width="150" useHandCursor="true" buttonMode="true" 
+                        source="{data.thumbnail}"/>
+                    
+                    <mx:Panel backgroundColor="0x393939" width="150" height="30" layout="absolute" paddingBottom="0"
+                    	creationComplete="VideoSetupEventHandler.creativeCreated(event,data);" 
+						paddingLeft="0" paddingRight="0" paddingTop="0" borderColor="#FCF2F2" borderStyle="none" 
+						cornerRadius="0" borderThickness="0" verticalAlign="top" 
+						headerHeight="0" borderThicknessLeft="0" borderThicknessBottom="0" borderThicknessRight="0" borderThicknessTop="0">
+                       	<mx:Text x="0" y="0" textAlign="left" id="imageTitle" text="{data.label}" width="130"  visible="true"  color="0xCCD5E7"  />
+                    	<mx:Image x="138" y="0" id="deleteVideo" source="@Embed(source='images/cancel_upload.png')" 
+                    				buttonMode="true" useHandCursor="true" 
+                    				click="VideoSetupEventHandler.thumbnailDeleted(event,data);" />
+		            </mx:Panel>
+                    
+                </mx:VBox>
+                </mx:HBox>
+            </mx:Component>
+		</mx:itemRenderer>
+
+
+	</mx:TileList>

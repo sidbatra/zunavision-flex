@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<components:ZVConvoFocus_as xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:components="components.*"
+	showEffect="{fadeIn}" hideEffect="{fadeOut}" removedEffect="{fadeOut}">
+	
+	<mx:Fade id="fadeIn"
+		alphaFrom="0.0" alphaTo="1.0" duration="400" />
+	
+	<mx:Fade id="fadeOut"
+		alphaFrom="1.0" alphaTo="0.0" duration="400" />
+	
+</components:ZVConvoFocus_as>

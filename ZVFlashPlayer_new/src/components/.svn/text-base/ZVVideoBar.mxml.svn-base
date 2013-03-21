@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<components:ZVVideoBar_as 
+	xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:components="components.*" xmlns:custom="*" 
+	width="640" height="24"
+	creationComplete="initComponent()" 
+	backgroundColor="#595959">
+	
+	<mx:Button id="playPauseButton"
+		x="32" y="2" width="17" height="20" 
+		useHandCursor="true" buttonMode="true"
+		 themeColor="#3558A1"/>
+		
+	<components:ZVSlider id="zvSlider"
+		x="56" y="2" width="479" height="20"
+		maximum="-1"
+		styleName="zvSlider"		
+		useHandCursor="true" buttonMode="true"
+		creationComplete="onSliderCreated()"
+		/>
+		
+	<mx:Label id="videoTimerLabel" 
+		x="567" y="4" width="36" height="16" 
+		color="#FFFFFF" fontFamily="Arial" fontSize="11"
+		text="00:00" 
+		/>
+		
+	<mx:Button id="addReplyButton" 
+		x="544" y="2" width="13" height="21" 
+		skin="@Embed(source='../images/droplet1.png')"
+		useHandCursor="true" buttonMode="true"
+		themeColor="#3558A1"
+		click="onAddReplyClicked(event)" 
+		
+		/>
+		
+		<!-- addReplyButton Tooltip code
+		toolTip=" "
+		toolTipCreate="HouseKeeping.onToolTipCreate('Add a droplet, share your insight',185,event)" 
+		toolTipShow="HouseKeeping.onToolTipShow(event,10)"-->
+	
+	<!--mx:Button id="embedButton" 
+		x="533" y="6" width="15" height="13" 
+		skin="@Embed(source='images/embedButtonSkin.png')"
+		useHandCursor="true" buttonMode="true" /-->
+					
+	<!--mx:Button id="fullScreenButton" 
+		x="563" y="7" width="15" height="13"
+		skin="@Embed(source='images/fullScreenButtonSkin.gif')"
+		useHandCursor="true" buttonMode="true" 
+		click="onFullScreenButtonClicked(event)"/-->
+						
+		
+	
+</components:ZVVideoBar_as>
